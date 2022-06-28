@@ -1,6 +1,7 @@
-FROM debian:bullseye
+FROM debian:bullseye-slim
 
-MAINTAINER "octavio.rossell@gmail.com"
+MAINTAINER Octavio Rossell Tabet "octavio.rossell@gmail.com"
+LABEL maintainer "octavio.rossell@gmail.com"
 
 ENV HOSTNAME debian.gnuve
 ENV DEBIAN_FRONTEND noninteractive
@@ -27,6 +28,9 @@ RUN echo $'if [ -f /etc/bash_completion ]; then \n . /etc/bash_completion \nfi \
 RUN echo $'\nHISTTIMEFORMAT="%d/%m/%y %T " \n' >> /etc/profile
 RUN echo 'export PS1="\[\033[1;0m\][\[\033[1;31m\]\u\[\033[1;0m\]@\[\033[1;34m\]\h\[\033[1;0m\]] \[\033[1;32m\]\w\[\033[1;0m\]\n# \[\033[0m\]"' >> /root/.bashrc
 RUN echo 'PS1="\[\033[1;0m\][\[\033[1;33m\]\u\[\033[1;0m\]@\[\033[1;34m\]\h\[\033[1;0m\]] \[\033[1;32m\]\w\[\033[1;0m\]\n# \[\033[0m\]"' >> /etc/skel/.bashrc
+
+RUN apt-get -y autoclean
+RUN apt-get clean
 
 VOLUME ["/opt/persistent"]
 #EXPOSE 22001
