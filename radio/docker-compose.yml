@@ -8,4 +8,5 @@ services:
     image: radio/liquidsoap
     env_file: ./liquidsoap/env
     build: ./liquidsoap
+      depends_on: radio/icecast
 
