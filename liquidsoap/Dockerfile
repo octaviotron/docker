@@ -20,7 +20,9 @@ COPY liquidsoap.liq /etc/liquidsoap.liq
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+RUN useradd -m -s /bin/bash eldj
+
 VOLUME ["/var/liquidsoap/music"]
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD liquidsoap /etc/liquidsoap.liq
+CMD runuser -l eldj -c 'liquidsoap /etc/liquidsoap.liq'
