@@ -24,6 +24,9 @@ fi
 if [ -n "$ICECAST_MAX_SOURCES" ]; then
     sed -i "s/<sources>[^<]*<\/sources>/<sources>$ICECAST_MAX_SOURCES<\/sources>/g" /etc/icecast2/icecast.xml
 fi
+if [ -n "$ICECAST_ENVIVO_PASSWORD" ]; then
+	sed -i "s/<username>envivo<\/username><password>[^<]*<\/password>/<username>envivo<\/username><password>$ICECAST_ENVIVO_PASSWORD<\/password>/g" /etc/icecast2/icecast.xml
+fi
 
 exec "$@"
 
