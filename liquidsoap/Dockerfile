@@ -12,6 +12,9 @@ RUN apt-get install --no-install-recommends -y liquidsoap nano
 RUN apt-get -y autoclean
 RUN apt-get clean
 
+RUN mkdir -p /var/liquidsoap/music/
+COPY default.ogg /var/liquidsoap/music/default.ogg
+
 COPY liquidsoap.liq /etc/liquidsoap.liq
 
 COPY docker-entrypoint.sh /entrypoint.sh
