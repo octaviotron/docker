@@ -13,17 +13,13 @@
     </limits>
     <authentication>
         <source-password>hackme</source-password>
-        <relay-password>hackme</relay-password>
+        <relay-password>___________hackme______________</relay-password>
         <admin-user>admin</admin-user>
         <admin-password>hackme</admin-password>
     </authentication>
     <hostname>localhost</hostname>
-    <listen-socket>
-        <port>8000</port>
-    </listen-socket>
-    <listen-socket>
-        <port>8081</port>
-    </listen-socket>
+    <listen-socket><port>8000</port></listen-socket>
+    <listen-socket><port>8081</port></listen-socket>
     <!-- listen-socket>
         <port>8082</port>
         <ssl>1</ssl>
@@ -33,8 +29,7 @@
     </http-headers>
     <mount type="normal">
         <mount-name>/envivo.ogg</mount-name>
-        <username>envivo</username>
-        <password>BarquisimetoChuruguara</password>
+        <username>envivo</username><password>envivo</password>
         <max-listeners>2</max-listeners>
         <burst-size>4096</burst-size>
         <!--fallback-mount>/example2.ogg</fallback-mount>
