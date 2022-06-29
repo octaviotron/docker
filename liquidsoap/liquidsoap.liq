@@ -23,7 +23,7 @@ output.icecast(%vorbis,
   host = "localhost", 
   port = 8000,
   user = "envivo",
-  password = "envivo", 
+  password = "pass", 
   mount = "envivo.ogg",
   security)
 
