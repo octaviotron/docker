@@ -1,11 +1,11 @@
 services:
   icecast:
     image: radio/icecast
-    env_file: ../icecast/env
-    build: ../icecast
+    env_file: ./icecast/env
+    build: ./icecast
 
   liquidsoap:
     image: radio/liquidsoap
-    env_file: ../liquidsoap/env
-    build: ../liquidsoap
+    env_file: ./liquidsoap/env
+    build: ./liquidsoap
 
