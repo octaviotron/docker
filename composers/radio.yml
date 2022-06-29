@@ -1,0 +1,14 @@
+services:
+  icecast:
+    image: radio/icecast
+	env_file: ../icecast/env
+    build: 
+	  context: ../icecast
+
+  liquidsoap:
+    image: radio/liquidsoap
+	env_file: ../liquidsoap/env
+    build: 
+      context: ../liquidsoap
+
+
