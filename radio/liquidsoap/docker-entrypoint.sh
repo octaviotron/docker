@@ -5,7 +5,7 @@ if [ -n "$LIQUIDSOAP_USER" ]; then
 fi
 
 if [ -n "$LIQUIDSOAP_PASS" ]; then
-    sed -i "s/password.*,/password='$LIQUIDSOAP_PASS',/g" /etc/liquidsoap.liq
+    sed -i "s/password.*/password='$LIQUIDSOAP_PASS',/g" /etc/liquidsoap.liq
 fi
 
 if [ -n "$LIQUIDSOAP_HOST" ]; then
