@@ -15,7 +15,7 @@ RUN echo "deb http://10.0.0.2/debian/ bullseye-updates main" >> /etc/apt/sources
 RUN apt-get -y update
 RUN apt-get install --no-install-recommends -y apt-utils
 RUN apt-get -y full-upgrade
-RUN apt-get install --no-install-recommends -y icecast2
+RUN apt-get install --no-install-recommends -y icecast2 sudo
 RUN apt-get -y autoclean
 RUN apt-get clean
 
@@ -29,10 +29,11 @@ EXPOSE 8000 8001 8443
 
 VOLUME ["/var/log/icecast2", "/etc/icecast2"]
 
-#RUN useradd -m -s /bin/bash radio
+RUN useradd -m -s /bin/bash radio
 #CMD runuser -l radio -c 'icecast2 -c /etc/icecast2/icecast.xml'
 
-#ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/entrypoint.sh"]
+
 #CMD icecast2 -c /etc/icecast2/icecast.xml
-RUN systemctl start icecast2
+#RUN systemctl start icecast2
 
