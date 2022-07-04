@@ -28,4 +28,4 @@ if [ -n "$ICECAST_ENVIVO_PASSWORD" ]; then
 	sed -i "s/<username>envivo<\/username><password>[^<]*<\/password>/<username>envivo<\/username><password>$ICECAST_ENVIVO_PASSWORD<\/password>/g" /etc/icecast2/icecast.xml
 fi
 
-sudo -Eu radio icecast2 -n -c /etc/icecast2/icecast.xml
+icecast2 -n -c /etc/icecast2/icecast.xml
