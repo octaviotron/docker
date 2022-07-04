@@ -15,9 +15,9 @@ services:
     expose:
       - "8000"
       - "8001"
-	ports:
-      - "8000:8000"
-      - "8001:8001"
+#	ports:
+#      - "8000:8000"
+#      - "8001:8001"
     stop_grace_period: 1s
 #    entrypoint: /entrypoint.sh
 
