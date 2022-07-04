@@ -29,10 +29,10 @@ EXPOSE 8000 8001 8443
 
 VOLUME ["/var/log/icecast2", "/etc/icecast2"]
 
-RUN useradd -m -s /bin/bash radio
-CMD runuser -l radio -c 'icecast2 -c /etc/icecast2/icecast.xml'
+#RUN useradd -m -s /bin/bash radio
+#CMD runuser -l radio -c 'icecast2 -c /etc/icecast2/icecast.xml'
 
 #ENTRYPOINT ["/entrypoint.sh"]
 #CMD icecast2 -c /etc/icecast2/icecast.xml
-
+RUN systemctl start icecast2
 
