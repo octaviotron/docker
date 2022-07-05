@@ -17,6 +17,17 @@ services:
       - "8001:8001"
     stop_grace_period: 1s
 
+  ices:
+    image: radio/ices
+    build: ./ices
+    environment:
+      - ICECAST_HOSTNAME={$ICECAST_HOSTNAME}
+      - ICECAST_PASSWORD={$ICECAST_PASSWORD}
+    volumes:
+      - type: bind
+        source: /home/docker/persistent
+        target: /mnt/music
+
 
 #  liquidsoap:
 #    image: radio/liquidsoap
