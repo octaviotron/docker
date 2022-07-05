@@ -19,16 +19,10 @@ RUN apt-get install --no-install-recommends -y wget libmp3lame-dev libxml2-dev l
 RUN apt-get -y autoclean
 RUN apt-get clean
 
-RUN cd /tmp
-RUN wget --no-check-certificate http://downloads.us.xiph.org/releases/ices/ices-0.4.tar.gz
-RUN tar xf ices-0.4.tar.gz
-RUN cd ices-0.4/
-RUN ./configure --prefix=/usr/local --with-pic --with-lame
-RUN make
-RUN make install
-RUN mkdir /etc/ices
+COPY ices-0.4.deb /tmp/ices-0.4.deb
 COPY ices.conf /etc/ices/ices.conf
 COPY playlist.txt /etc/ices/playlist.txt
+RUN dpkg -i /tmp/ices-0.4.deb
 
 VOLUME ["/mnt/music"]
 
