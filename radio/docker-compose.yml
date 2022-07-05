@@ -21,7 +21,7 @@ services:
     image: radio/ices
     build: ./ices
     environment:
-      - ICECAST_HOSTNAME={$ICECAST_HOSTNAME}
+      - ICECAST_SERVER={$ICECAST_SERVER}
       - ICECAST_PASSWORD={$ICECAST_PASSWORD}
     volumes:
       - type: bind

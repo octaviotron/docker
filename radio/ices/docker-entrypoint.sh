@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ -n "$ICECAST_HOSTNAME" ]; then
-	sed -i "s/<Hostname>[^<]*<\/Hostname>/<Hostname>$ICECAST_HOSTNAME<\/Hostname>/g" /etc/ices/ices.conf
+if [ -n "$ICECAST_SERVER" ]; then
+	sed -i "s/<Hostname>[^<]*<\/Hostname>/<Hostname>$ICECAST_SERVER<\/Hostname>/g" /etc/ices/ices.conf
 fi
 
 if [ -n "$ICECAST_PASSWORD" ]; then
