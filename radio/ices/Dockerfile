@@ -6,10 +6,10 @@ LABEL maintainer "octavio.rossell@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 # TEMPORAL
-RUN echo "Acquire::Check-Valid-Until false;" > /etc/apt/apt.conf.d/10no--check-valid-until
-RUN echo "deb http://10.0.0.2/debian-security bullseye-security main" > /etc/apt/sources.list
-RUN echo "deb http://10.0.0.2/debian/ bullseye main" >> /etc/apt/sources.list
-RUN echo "deb http://10.0.0.2/debian/ bullseye-updates main" >> /etc/apt/sources.list
+#RUN echo "Acquire::Check-Valid-Until false;" > /etc/apt/apt.conf.d/10no--check-valid-until
+#RUN echo "deb http://10.0.0.2/debian-security bullseye-security main" > /etc/apt/sources.list
+#RUN echo "deb http://10.0.0.2/debian/ bullseye main" >> /etc/apt/sources.list
+#RUN echo "deb http://10.0.0.2/debian/ bullseye-updates main" >> /etc/apt/sources.list
 
 
 RUN apt-get -y update
