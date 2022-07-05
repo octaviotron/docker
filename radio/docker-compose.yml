@@ -21,22 +21,15 @@ services:
     image: radio/ices
     build: ./ices
     env_file: ./ices/.env
-#    environment:
-#      - ICECAST_SERVER=${ICECAST_SERVER}
-#      - ICECAST_PASSWORD={$ICECAST_PASSWORD}
     volumes:
       - type: bind
         source: /home/docker/persistent
         target: /mnt/music
+    stop_grace_period: 1s
 
 
-#  liquidsoap:
-#    image: radio/liquidsoap
-#    build: ./liquidsoap
-#    environment:
-#      - LIQUIDSOAP_USER=${LIQUIDSOAP_USER}
-#      - LIQUIDSOAP_PASS=${LIQUIDSOAP_PASS}
-#      - LIQUIDSOAP_HOST=${LIQUIDSOAP_HOST}
-#      - LIQUIDSOAP_MOUNT=${LIQUIDSOAP_MOUNT}
-#    stop_grace_period: 1s
-#    entrypoint: /entrypoint.sh
+  liquidsoap:
+    image: radio/liquidsoap
+    build: ./liquidsoap
+    env_file: ./liquidsoap/.env
+    stop_grace_period: 1s
