@@ -20,9 +20,10 @@ services:
   ices:
     image: radio/ices
     build: ./ices
-    environment:
-      - ICECAST_SERVER=${ICECAST_SERVER}
-      - ICECAST_PASSWORD={$ICECAST_PASSWORD}
+    env_file: ./ices/.env
+#    environment:
+#      - ICECAST_SERVER=${ICECAST_SERVER}
+#      - ICECAST_PASSWORD={$ICECAST_PASSWORD}
     volumes:
       - type: bind
         source: /home/docker/persistent
