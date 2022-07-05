@@ -16,4 +16,5 @@ if [ -n "$LIQUIDSOAP_MOUNT" ]; then
     sed -i "s/mount.*/mount='$LIQUIDSOAP_MOUNT',/g" /etc/liquidsoap.liq
 fi
 
-exec "$@"
+runuser -l eldj -c 'liquidsoap /etc/liquidsoap.liq'
+

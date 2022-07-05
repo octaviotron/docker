@@ -23,6 +23,8 @@ RUN chmod +x /entrypoint.sh
 RUN useradd -m -s /bin/bash eldj
 
 VOLUME ["/var/liquidsoap/music"]
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
 
-CMD runuser -l eldj -c 'liquidsoap /etc/liquidsoap.liq'
+CMD ["/entrypoint.sh"]
+
+#CMD runuser -l eldj -c 'liquidsoap /etc/liquidsoap.liq'
