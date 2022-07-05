@@ -20,7 +20,7 @@ RUN apt-get -y autoclean
 RUN apt-get clean
 
 RUN cd /tmp
-RUN wget http://downloads.us.xiph.org/releases/ices/ices-0.4.tar.gz
+RUN wget --no-check-certificate http://downloads.us.xiph.org/releases/ices/ices-0.4.tar.gz
 RUN tar xf ices-0.4.tar.gz
 RUN cd ices-0.4/
 RUN ./configure --prefix=/usr/local --with-pic --with-lame
