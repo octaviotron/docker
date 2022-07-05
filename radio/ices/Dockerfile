@@ -15,7 +15,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update
 RUN apt-get install --no-install-recommends -y apt-utils
 RUN apt-get -y full-upgrade
-RUN apt-get install --no-install-recommends -y wget libmp3lame-dev libxml2-dev libshout-dev libvorbis-dev build-essential
+#RUN apt-get install --no-install-recommends -y wget 
 RUN apt-get -y autoclean
 RUN apt-get clean
 
@@ -30,6 +30,6 @@ COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 
-CMD ["/entrypoint.sh"]
+#CMD ["/entrypoint.sh"]
 
 
