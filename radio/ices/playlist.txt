@@ -1,0 +1,3 @@
+/mnt/music/1.mp3
+/mnt/music/2.mp3
+/mnt/music/3.mp3
