@@ -8,7 +8,8 @@ docker build -t ices -f Dockerfile .
 
 **Run Container**
 ```
-docker run --name="ices" --entrypoint="bash" -itd --mount type=bind,source=/home/docker/persistent,destination=/mnt/music ices
+docker run --name="ices" -td --mount type=bind,source=/home/docker/persistent,destination=/mnt/music --env ICECAST_HOSTNAME="10.0.0.122" --env ICECAST_PASSWORD="pass" ices
+
 docker exec -ti ices bash
 ```
 
@@ -16,6 +17,7 @@ docker exec -ti ices bash
 (see "env" file)
 
 ```
-#
+ICECAST_HOSTNAME="10.0.0.122"
+ICECAST_PASSWORD="pass"
 ```
 
